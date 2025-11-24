@@ -1,7 +1,16 @@
 FROM node:20-alpine
+
 WORKDIR /app
-COPY package*.json .
+
+# Copy package.json and install dependencies
+COPY package*.json ./
 RUN npm install
-COPY . .
+
+# Copy source code
+COPY src/ ./src
+
+# Expose port
 EXPOSE 8082
-CMD ["node", "index.js"]
+
+# Start the service
+CMD ["node", "src/index.js"]

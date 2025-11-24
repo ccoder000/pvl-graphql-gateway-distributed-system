@@ -1,0 +1,39 @@
+version: "3.9"
+
+services:
+  postgres:
+    image: postgres:15-alpine
+    container_name: postgres
+    environment:
+      POSTGRES_DB: microservices
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./db/init.sql:/docker-entrypoint-initdb.d/init.sql
+
+  user-service:
+    build: ./user-service
+    ports: ["8081:8081"]
+    depends_on:
+      - postgres
+
+  product-service:
+    build: ./product-service
+    ports: ["8082:8082"]
+    depends_on:
+      - postgres
+
+  graphql-gateway:
+    build: ./graphql-gateway
+    ports: ["4000:4000"]
+    depends_on:
+      - user-service
+      - product-service
+
+  frontend:
+    build: ./frontend
+    ports: ["3000:3000"]
+    depends_on:
+      - graphql-gateway
