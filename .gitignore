@@ -1,0 +1,165 @@
+###############################################################################
+# OS-specific junk files
+###############################################################################
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon?
+._*
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Linux
+*~
+*.swp
+*.swo
+
+###############################################################################
+# IDE / Editor files
+###############################################################################
+# VSCode
+.vscode/
+.history/
+*.code-workspace
+
+# IntelliJ / JetBrains
+.idea/
+*.iml
+*.iws
+*.ipr
+out/
+
+# Eclipse
+.project
+.classpath
+.settings/
+bin/
+
+###############################################################################
+# Docker
+###############################################################################
+# Docker build artifacts
+**/dockerfile-backup
+**/docker-compose.override.yml
+
+# Docker volumes
+docker-data/
+volumes/
+tmp-volumes/
+*.pid
+*.sock
+
+###############################################################################
+# Node.js (Product Service, GraphQL Gateway, React Frontend)
+###############################################################################
+# Dependencies
+node_modules/
+npm-debug.log*
+yarn-error.log*
+pnpm-lock.yaml
+
+# Runtime logs
+logs/
+*.log
+*.tmp
+
+# Environment variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Build outputs
+dist/
+build/
+.cache/
+.next/
+coverage/
+.eslintcache
+
+# React frontend
+*.d.ts
+*.map
+.sass-cache/
+static/media/
+
+###############################################################################
+# Java / Spring Boot (User Service)
+###############################################################################
+# Maven / Gradle
+target/
+.gradle/
+build/
+!gradle/wrapper/gradle-wrapper.jar
+pom.xml.versionsBackup
+pom.xml.tag
+release.properties
+
+# Logs
+*.log
+*.trace
+
+# Spring Boot Dev Tools
+.springBeans
+.spring-boot-devtools.properties
+
+###############################################################################
+# Testing / Coverage
+###############################################################################
+test-results/
+coverage/
+*.lcov
+cypress/videos/
+cypress/screenshots/
+
+###############################################################################
+# PostgreSQL / Database
+###############################################################################
+# Runtime data and volumes
+*.sql
+pgdata/
+postgres-data/
+
+###############################################################################
+# Observability (Prometheus + Grafana)
+###############################################################################
+# Prometheus ephemeral files
+prometheus-data/
+prometheus.yml.bak
+
+# Grafana session data
+grafana-data/
+grafana/plugins/
+grafana/logs/
+*.tmp.json
+
+###############################################################################
+# Codespaces / Devcontainers
+###############################################################################
+.devcontainer.json.backup
+tmp/
+.cache/
+
+###############################################################################
+# Misc / Secrets
+###############################################################################
+# Secrets / keys / certificates
+secrets/
+keys/
+certs/
+*.key
+*.pem
+
+# Temporary / backup files
+tmp/
+temp/
+*.bak
+*.old
+*.orig
+*.retry
